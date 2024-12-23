@@ -3,110 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>تسجيل الدخول - موقع الأفلام</title>
+    <title>موقع الأفلام</title>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script async src="https://pagead.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7218983773373982"
+     crossorigin="anonymous"></script>
 </head>
-<body class="auth-page">
-    <div class="auth-container">
-        <div class="auth-box">
-            <div class="site-logo">
+<body>
+    <header>
+        <nav>
+            <div class="logo">
                 <i class="fas fa-film"></i>
                 <span>موقع الأفلام</span>
             </div>
-            <h2>تسجيل الدخول</h2>
-            <div class="alert" id="error-message" style="display: none;"></div>
-            <form id="login-form" onsubmit="return handleLogin(event)">
-                <div class="form-group">
-                    <label for="username">اسم المستخدم</label>
-                    <div class="input-group">
-                        <i class="fas fa-user"></i>
-                        <input type="text" id="username" name="username" required>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="password">كلمة المرور</label>
-                    <div class="input-group">
-                        <i class="fas fa-lock"></i>
-                        <input type="password" id="password" name="password" required>
-                        <i class="fas fa-eye toggle-password"></i>
-                    </div>
-                </div>
-                <div class="form-group remember-me">
-                    <label>
-                        <input type="checkbox" name="remember"> تذكرني
-                    </label>
-                    <a href="#" class="forgot-password">نسيت كلمة المرور؟</a>
-                </div>
-                <button type="submit" id="submit-btn">دخول</button>
-            </form>
-            <p class="auth-links">
-                ليس لديك حساب؟ <a href="register.html">سجل الآن</a>
-            </p>
-            <a href="index.html" class="back-home"><i class="fas fa-home"></i> العودة للرئيسية</a>
-        </div>
+            <div class="nav-links">
+                <a href="login.html" class="login-btn">تسجيل الدخول</a>
+                <a href="register.html" class="register-btn">حساب جديد</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="ad-container">
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-7218983773373982"
+             data-ad-slot="1234567890"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
     </div>
 
-    <script>
-        // تعريف المستخدمين (مؤقتاً - يمكن استبدالها بقاعدة بيانات حقيقية)
-        const users = [
-            { username: 'admin', password: 'admin123' },
-            { username: 'user', password: 'user123' }
-        ];
+    <main>
+        <div class="search-bar">
+            <input type="text" id="search" placeholder="ابحث عن فيلم...">
+            <select id="category-filter">
+                <option value="">جميع التصنيفات</option>
+                <option value="action">أكشن</option>
+                <option value="comedy">كوميدي</option>
+                <option value="drama">دراما</option>
+                <option value="horror">رعب</option>
+                <option value="anime">أنمي</option>
+            </select>
+        </div>
 
-        function handleLogin(event) {
-            event.preventDefault();
-            
-            const username = document.getElementById('username').value;
-            const password = document.getElementById('password').value;
-            const submitBtn = document.getElementById('submit-btn');
-            const errorMessage = document.getElementById('error-message');
+        <div class="movies-grid">
+            <!-- سيتم إضافة الأفلام هنا -->
+        </div>
 
-            // تعطيل زر التسجيل أثناء المعالجة
-            submitBtn.disabled = true;
-            submitBtn.textContent = 'جاري التحقق...';
+        <div class="ad-container">
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-7218983773373982"
+                 data-ad-slot="1234567890"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+    </main>
 
-            // محاكاة تأخير الشبكة
-            setTimeout(() => {
-                // التحقق من البيانات
-                const user = users.find(u => u.username === username && u.password === password);
-                
-                if (user) {
-                    // تخزين حالة تسجيل الدخول
-                    localStorage.setItem('user', JSON.stringify({ username }));
-                    // الانتقال إلى الصفحة الرئيسية
-                    window.location.href = 'index.html';
-                } else {
-                    // عرض رسالة الخطأ
-                    errorMessage.textContent = 'اسم المستخدم أو كلمة المرور غير صحيحة';
-                    errorMessage.style.display = 'block';
-                    
-                    // إعادة تفعيل زر التسجيل
-                    submitBtn.disabled = false;
-                    submitBtn.textContent = 'دخول';
-                    
-                    // إخفاء رسالة الخطأ بعد 3 ثواني
-                    setTimeout(() => {
-                        errorMessage.style.display = 'none';
-                    }, 3000);
-                }
-            }, 1000);
+    <div class="ad-container">
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-7218983773373982"
+             data-ad-slot="1234567890"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
 
-            return false;
-        }
-
-        // إظهار/إخفاء كلمة المرور
-        document.querySelector('.toggle-password').addEventListener('click', function() {
-            const passwordInput = document.getElementById('password');
-            if (passwordInput.type === 'password') {
-                passwordInput.type = 'text';
-                this.classList.replace('fa-eye', 'fa-eye-slash');
-            } else {
-                passwordInput.type = 'password';
-                this.classList.replace('fa-eye-slash', 'fa-eye');
-            }
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
-</html> 
+</html>
