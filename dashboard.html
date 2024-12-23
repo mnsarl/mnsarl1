@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة التحكم - موقع الأفلام</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="dashboard-page">
+    <div class="dashboard-container">
+        <!-- القائمة الجانبية -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <i class="fas fa-film"></i>
+                <span>لوحة التحكم</span>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="#" class="active" data-section="movies">
+                    <i class="fas fa-video"></i>
+                    إدارة الأفلام
+                </a>
+                <a href="index.html">
+                    <i class="fas fa-home"></i>
+                    العودة للموقع
+                </a>
+                <a href="#" id="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i>
+                    تسجيل خروج
+                </a>
+            </nav>
+        </aside>
+
+        <!-- المحتوى الرئيسي -->
+        <main class="dashboard-main">
+            <div class="dashboard-header">
+                <h1>إدارة الأفلام</h1>
+                <button id="add-movie-btn" class="primary-btn">
+                    <i class="fas fa-plus"></i>
+                    إضافة فيلم جديد
+                </button>
+            </div>
+
+            <!-- جدول الأفلام -->
+            <div class="movies-table-container">
+                <table class="movies-table">
+                    <thead>
+                        <tr>
+                            <th>الصورة</th>
+                            <th>العنوان</th>
+                            <th>السنة</th>
+                            <th>التصنيف</th>
+                            <th>تاريخ الإضافة</th>
+                            <th>الإجراءات</th>
+                        </tr>
+                    </thead>
+                    <tbody id="movies-list">
+                        <!-- سيتم إضافة الأفلام هنا عبر JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+
+    <!-- نموذج إضافة/تعديل فيلم -->
+    <div id="movie-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modal-title">إضافة فيلم جديد</h2>
+            <form id="movie-form">
+                <div class="form-group">
+                    <label for="title">عنوان الفيلم</label>
+                    <input type="text" id="title" required>
+                </div>
+                <div class="form-group">
+                    <label for="description">وصف الفيلم</label>
+                    <textarea id="description" rows="4" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="poster">رابط صورة الفيلم</label>
+                    <input type="url" id="poster" required>
+                </div>
+                <div class="form-group">
+                    <label for="video">رابط الفيلم</label>
+                    <input type="url" id="video" required>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="category">التصنيف</label>
+                        <select id="category" required>
+                            <option value="">اختر التصنيف</option>
+                            <option value="action">أكشن</option>
+                            <option value="comedy">كوميدي</option>
+                            <option value="drama">دراما</option>
+                            <option value="horror">رعب</option>
+                            <option value="anime">أنمي</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="year">سنة الإنتاج</label>
+                        <input type="number" id="year" min="1900" max="2024" required>
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="primary-btn">حفظ</button>
+                    <button type="button" class="secondary-btn" onclick="closeModal()">إلغاء</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="dashboard.js"></script>
+</body>
+</html> 

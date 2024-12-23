@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مشاهدة الفيلم - موقع الأفلام</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/plyr/3.7.8/plyr.css">
+</head>
+<body class="watch-page">
+    <div class="watch-container">
+        <!-- معلومات الفيلم -->
+        <div class="movie-info-bar">
+            <a href="index.html" class="back-btn">
+                <i class="fas fa-arrow-right"></i>
+                العودة للرئيسية
+            </a>
+            <h1 id="movie-title">عنوان الفيلم</h1>
+        </div>
+
+        <!-- مشغل الفيديو -->
+        <div class="video-container">
+            <video id="player" playsinline controls>
+                <source src="" type="video/mp4" />
+            </video>
+        </div>
+
+        <!-- معلومات الفيلم -->
+        <div class="movie-details">
+            <div class="movie-meta">
+                <span id="movie-year"><i class="fas fa-calendar"></i> السنة</span>
+                <span id="movie-category"><i class="fas fa-tag"></i> التصنيف</span>
+                <div class="rating">
+                    <i class="fas fa-star"></i>
+                    <span id="movie-rating">0</span>
+                    <span>/ 5</span>
+                    <span id="ratings-count">(0 تقييم)</span>
+                </div>
+            </div>
+            <p id="movie-description" class="movie-description"></p>
+        </div>
+
+        <!-- قسم التقييم -->
+        <div class="rating-section">
+            <h3>قيم الفيلم</h3>
+            <div class="stars">
+                <i class="far fa-star" data-rating="1"></i>
+                <i class="far fa-star" data-rating="2"></i>
+                <i class="far fa-star" data-rating="3"></i>
+                <i class="far fa-star" data-rating="4"></i>
+                <i class="far fa-star" data-rating="5"></i>
+            </div>
+        </div>
+
+        <!-- قسم التعليقات -->
+        <div class="comments-section">
+            <h3>التعليقات</h3>
+            <form id="comment-form" class="comment-form">
+                <textarea name="comment" placeholder="اكتب تعليقك هنا..." required></textarea>
+                <button type="submit">إرسال</button>
+            </form>
+            <div id="comments-list" class="comments-list">
+                <!-- سيتم إضافة التعليقات هنا -->
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/plyr/3.7.8/plyr.min.js"></script>
+    <script src="watch.js"></script>
+</body>
+</html> 

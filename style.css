@@ -1,0 +1,680 @@
+:root {
+    --primary-color: #e50914;
+    --secondary-color: #1a1a1a;
+    --text-color: #ffffff;
+    --gray-color: #888888;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Cairo', sans-serif;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    background: #1a1a1a;
+    color: white;
+    direction: rtl;
+    line-height: 1.6;
+}
+
+/* القائمة العلوية */
+header {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.login-btn, .register-btn {
+    padding: 8px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.login-btn {
+    background: transparent;
+    color: white;
+    border: 2px solid var(--primary-color);
+}
+
+.register-btn {
+    background: var(--primary-color);
+    color: white;
+}
+
+/* شريط البحث */
+.search-bar {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.search-bar input,
+.search-bar select {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+.search-bar input {
+    flex: 1;
+}
+
+.search-bar select {
+    width: 150px;
+}
+
+/* شبكة الأفلام */
+.movies-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+/* بطاقة الفيلم */
+.movie-card {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.movie-card:hover {
+    transform: translateY(-5px);
+}
+
+.movie-poster {
+    position: relative;
+    aspect-ratio: 2/3;
+}
+
+.movie-poster img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.movie-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.movie-card:hover .movie-overlay {
+    opacity: 1;
+}
+
+.watch-btn {
+    background: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.movie-info {
+    padding: 1rem;
+}
+
+.movie-title {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.movie-meta {
+    display: flex;
+    gap: 1rem;
+    color: #aaa;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.movie-rating {
+    color: #ffd700;
+    margin-bottom: 0.5rem;
+}
+
+.movie-description {
+    color: #aaa;
+    font-size: 0.9rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    line-clamp: 3;
+    overflow: hidden;
+}
+
+/* تأثيرات */
+.fade-in {
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* تحسين التفاعلية */
+input:focus,
+select:focus {
+    outline: 2px solid var(--primary-color);
+}
+
+button:hover,
+.watch-btn:hover {
+    opacity: 0.9;
+}
+
+/* تحسين الأداء */
+* {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* تخزين مؤقت للصور */
+img {
+    will-change: transform;
+}
+
+/* تحسين تحميل الخطوط */
+@font-face {
+    font-family: 'Cairo';
+    src: url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
+    font-display: swap;
+}
+
+/* تنسيقات صفحات تسجيل الدخول والتسجيل */
+.auth-page {
+    background: linear-gradient(135deg, #1a1a1a 0%, #000000 100%);
+    min-height: 100vh;
+}
+
+.auth-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.auth-box {
+    background: rgba(51, 51, 51, 0.95);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 450px;
+    backdrop-filter: blur(10px);
+}
+
+.auth-box .logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 30px;
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+.auth-box .logo img {
+    height: 50px;
+}
+
+.auth-box h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--primary-color);
+    font-size: 24px;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.input-group i {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--gray-color);
+}
+
+.input-group .toggle-password {
+    left: 15px;
+    right: auto;
+    cursor: pointer;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px 40px 12px 40px;
+    border: 1px solid #444;
+    border-radius: 8px;
+    background: #222;
+    color: var(--text-color);
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.input-group input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.2);
+}
+
+.remember-me {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.forgot-password {
+    color: var(--gray-color);
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.forgot-password:hover {
+    color: var(--primary-color);
+}
+
+.auth-box button {
+    width: 100%;
+    padding: 14px;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.auth-box button:hover {
+    background: #cc0000;
+    transform: translateY(-2px);
+}
+
+.auth-links {
+    text-align: center;
+    margin-top: 25px;
+    color: var(--gray-color);
+}
+
+.auth-links a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.alert {
+    background: rgba(255, 0, 0, 0.1);
+    color: #ff3333;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    text-align: center;
+    border: 1px solid rgba(255, 0, 0, 0.2);
+    font-weight: bold;
+}
+
+/* تحسين التجاوب مع الشاشات الصغيرة */
+@media (max-width: 480px) {
+    .auth-box {
+        padding: 20px;
+    }
+
+    .remember-me {
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+    }
+} 
+
+/* تنسيق شعار الموقع */
+.site-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 30px;
+    color: var(--primary-color);
+    font-size: 24px;
+}
+
+.site-logo i {
+    font-size: 32px;
+}
+
+.site-logo span {
+    font-weight: bold;
+}
+
+/* تنسيق قائمة المستخدم */
+.user-menu {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.user-menu span {
+    color: var(--text-color);
+}
+
+#logout-btn {
+    color: var(--text-color);
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    background-color: var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+#logout-btn:hover {
+    background-color: #cc0000;
+} 
+
+/* تنسيق التصنيفات */
+.categories {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.category-btn {
+    padding: 8px 20px;
+    border: none;
+    border-radius: 5px;
+    background: #333;
+    color: var(--text-color);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.category-btn:hover,
+.category-btn.active {
+    background: var(--primary-color);
+}
+
+/* تنسيق التلميحات في النموذج */
+.form-hint {
+    display: block;
+    color: var(--gray-color);
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+/* صورة احتياطية للأفلام */
+.movie-poster img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background: #222;
+} 
+
+/* قسم جميع الأفلام */
+.all-movies-section {
+    margin: 40px 0;
+}
+
+.section-header {
+    margin-bottom: 30px;
+}
+
+.section-header h2 {
+    margin-bottom: 20px;
+    color: var(--text-color);
+    font-size: 24px;
+}
+
+.categories-filter {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.no-movies {
+    text-align: center;
+    color: var(--gray-color);
+    padding: 40px;
+    font-size: 18px;
+} 
+
+/* تنسيق النافذة المنبثقة للفيديو */
+.video-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.95);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    padding: 20px;
+}
+
+.video-modal-content {
+    position: relative;
+    width: 90%;
+    max-width: 900px;
+    aspect-ratio: 16/9;
+    background: #000;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.video-modal-content iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.close-video {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.5);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    transition: all 0.3s ease;
+}
+
+.close-video:hover {
+    background: var(--primary-color);
+    transform: scale(1.1);
+}
+
+/* تأكد من أن النافذة المنبثقة تظهر فوق كل شيء */
+body.modal-open {
+    overflow: hidden;
+}
+
+@media (max-width: 768px) {
+    .video-modal {
+        padding: 10px;
+    }
+    
+    .video-modal-content {
+        width: 95%;
+    }
+}
+
+/* تنسيق التصنيفات */
+.categories {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.category-btn {
+    padding: 8px 20px;
+    border: none;
+    border-radius: 5px;
+    background: #333;
+    color: var(--text-color);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.category-btn:hover,
+.category-btn.active {
+    background: var(--primary-color);
+}
+
+.rating i {
+    margin-left: 5px;
+} 
+
+.ad-container {
+    max-width: 1200px;
+    margin: 20px auto;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    min-height: 100px;
+}
+
+/* تحسين نافذة الفيديو */
+.video-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.95);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    padding: 20px;
+}
+
+.video-modal-content {
+    position: relative;
+    width: 90%;
+    max-width: 900px;
+    aspect-ratio: 16/9;
+    background: #000;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.video-modal-content iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.close-video {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.5);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    transition: all 0.3s ease;
+}
+
+.close-video:hover {
+    background: var(--primary-color);
+    transform: scale(1.1);
+}
+
+/* تأكد من أن النافذة المنبثقة تظهر فوق كل شيء */
+body.modal-open {
+    overflow: hidden;
+}
+
+@media (max-width: 768px) {
+    .video-modal {
+        padding: 10px;
+    }
+    
+    .video-modal-content {
+        width: 95%;
+    }
+} 

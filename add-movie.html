@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إضافة فيلم جديد - موقع الأفلام</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="admin-page">
+    <div class="admin-container">
+        <div class="admin-box">
+            <h2><i class="fas fa-film"></i> إضافة فيلم جديد</h2>
+            <form id="add-movie-form" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="title">عنوان الفيلم</label>
+                    <input type="text" id="title" name="title" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="description">وصف الفيلم</label>
+                    <textarea id="description" name="description" rows="4" required></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="poster">رابط صورة الفيلم</label>
+                    <input type="url" id="poster" name="poster" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="video">ملف الفيلم</label>
+                    <input type="file" id="video" name="video" accept="video/*" required>
+                    <div class="upload-progress">
+                        <div class="progress-bar"></div>
+                        <span class="progress-text">0%</span>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="category">التصنيف</label>
+                    <select id="category" name="category" required>
+                        <option value="">اختر التصنيف</option>
+                        <option value="action">أكشن</option>
+                        <option value="comedy">كوميدي</option>
+                        <option value="drama">دراما</option>
+                        <option value="horror">رعب</option>
+                        <option value="anime">أنمي</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="year">سنة الإنتاج</label>
+                    <input type="number" id="year" name="year" min="1900" max="2024" required>
+                </div>
+
+                <button type="submit">إضافة الفيلم</button>
+            </form>
+            <div id="message" class="alert" style="display: none;"></div>
+            <a href="index.html" class="back-home"><i class="fas fa-home"></i> العودة للرئيسية</a>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('add-movie-form').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            
+            try {
+                const response = await fetch('/api/movies', {
+                    method: 'POST',
+                    body: formData
+                });
+                
+                const data = await response.json();
+                
+                if (response.ok) {
+                    alert('تم إضافة الفيلم بنجاح!');
+                    window.location.href = 'index.html';
+                } else {
+                    throw new Error(data.message || 'فشل في رفع الفيلم');
+                }
+            } catch (error) {
+                alert(error.message);
+                console.error('Error:', error);
+            }
+        });
+    </script>
+</body>
+</html> 

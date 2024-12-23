@@ -1,0 +1,102 @@
+[
+  {
+    "title": "الفارس الأخير",
+    "description": "في عالم مليء بالمغامرات، يخوض فارس شجاع رحلة خطيرة لإنقاذ مملكته من الشر المحدق",
+    "poster": "https://img.akwam.link/thumb/260x380/uploads/zLJ1O.jpg",
+    "category": "action",
+    "year": "2023",
+    "videoId": "1g3_CFmnU7k",
+    "dateAdded": "2024-12-23T00:59:57.861Z",
+    "rating": 4.5,
+    "ratingsCount": 120,
+    "ratings": [
+      4,
+      5,
+      4,
+      5,
+      4
+    ],
+    "comments": [
+      {
+        "text": "فيلم رائع جداً!",
+        "username": "أحمد",
+        "date": "2024-12-23T00:59:57.862Z"
+      }
+    ]
+  },
+  {
+    "title": "المغامرون الصغار",
+    "description": "مجموعة من الأطفال يكتشفون عالماً سحرياً مليئاً بالمغامرات والألغاز",
+    "poster": "https://img.akwam.link/thumb/260x380/uploads/RnKl2.jpg",
+    "category": "comedy",
+    "year": "2023",
+    "videoId": "uYPbbksJxIg",
+    "dateAdded": "2024-12-23T00:59:57.862Z",
+    "rating": 4.2,
+    "ratingsCount": 85,
+    "ratings": [
+      4,
+      4,
+      5,
+      4,
+      4
+    ],
+    "comments": [
+      {
+        "text": "فيلم جميل للعائلة",
+        "username": "سارة",
+        "date": "2024-12-23T00:59:57.862Z"
+      }
+    ]
+  },
+  {
+    "title": "الحقيقة المخفية",
+    "description": "محقق يكتشف سلسلة من الأحداث الغامضة التي تقوده إلى حقيقة صادمة",
+    "poster": "https://img.akwam.link/thumb/260x380/uploads/OQk3n.jpg",
+    "category": "drama",
+    "year": "2023",
+    "videoId": "oBqqI6NMeaM",
+    "dateAdded": "2024-12-23T00:59:57.862Z",
+    "rating": 4.7,
+    "ratingsCount": 150,
+    "ratings": [
+      5,
+      4,
+      5,
+      5,
+      4
+    ],
+    "comments": [
+      {
+        "text": "قصة مشوقة جداً",
+        "username": "محمد",
+        "date": "2024-12-23T00:59:57.862Z"
+      }
+    ]
+  },
+  {
+    "title": "عالم الأنمي",
+    "description": "مغامرة أنمي مثيرة في عالم خيالي مليء بالسحر والتحديات",
+    "poster": "https://img.akwam.link/thumb/260x380/uploads/1BtEP.jpg",
+    "category": "anime",
+    "year": "2023",
+    "videoId": "D9MyQd5BgfM",
+    "dateAdded": "2024-12-23T00:59:57.862Z",
+    "rating": 4.8,
+    "ratingsCount": 200,
+    "ratings": [
+      5,
+      5,
+      4,
+      5,
+      5
+    ],
+    "comments": [
+      {
+        "text": "من أفضل أفلام الأنمي!",
+        "username": "ريم",
+        "date": "2024-12-23T00:59:57.862Z"
+      }
+    ]
+  }
+]
